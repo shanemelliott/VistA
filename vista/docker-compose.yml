@@ -1,0 +1,23 @@
+version: "3.6"
+services:
+  iris:
+    build: 
+      context: .
+      dockerfile : Dockerfile 
+    # if you use a licnsed version of iris you meay need to switch the below.
+    #command: -a /xinetd.sh
+    #command: --check-caps false -a /xinetd.sh
+    ports:
+      - 52773:52773
+      - 1972:1972
+      - 9093:19301
+      - 9096:18301
+    volumes:
+      - ../:/home/irisowner/dev
+    #environment:
+     # - ISC_CPF_MERGE_FILE=/dur/merge/merge.cpf
+      #- ISC_DATA_DIRECTORY=/dur/iris_conf.d
+      # for adding licnese in licnsed version.  
+      #- ~/vista/iris.key:/dur/iris_conf.d/mgr/iris.key
+ 
+

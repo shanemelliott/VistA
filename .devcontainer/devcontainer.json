@@ -1,16 +1,16 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.224.2/containers/docker-existing-docker-compose
 {
-	"name": "VistA",
+	"name": "vistv",
 
 	// Use a modified recipe to create the container
 	"dockerComposeFile": [
-		"./docker-compose.yml"
+		"../vista/docker-compose.yml"
 	],
 
 	"service": "iris",
 
-	"workspaceFolder": "/iris/vista",
+	"workspaceFolder": "/home/irisowner/dev",
 
 	// The next set of lines are for Codespaces
 	"remoteUser": "irisowner",
@@ -29,7 +29,7 @@
 			// Server Manager can also be used.
 			"settings": {
 				"objectscript.conn" :{
-					"server": "devcontainer",
+					"server": "vista",
 					"ns": "USER",
 					"active": true
 				},
@@ -64,7 +64,10 @@
 
 			// Add the IDs of extensions we want installed when the container is created.
 			"extensions": [
-				"intersystems-community.servermanager"
+				"intersystems-community.vscode-objectscript",
+				"intersystems.language-server",
+				"intersystems-community.servermanager",
+				"ms-vscode.docker"
 			]
 		}
 	}
