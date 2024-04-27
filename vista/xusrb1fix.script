@@ -1,6 +1,3 @@
- ; fix expired users
- zn "%SYS"
- Do ##class(Security.Users).UnExpireUserPasswords("*")
  ; load the correct version of XUSRB1
  zn "VISTA"
  d $System.OBJ.Load("/tmp/xusrb1.xml")
