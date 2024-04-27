@@ -13,8 +13,6 @@ service stg_vlk
         wait = no
         user = irisowner
         env = TZ=/etc/localtime
-        #Community version of iris has the exe in a different directory
-        #server = /usr/bin/irissession
         server = /home/irisowner/bin/irissession
         server_args = iris -ci -U VISTA CACHELNX^XOBVTCP
         instances = UNLIMITED

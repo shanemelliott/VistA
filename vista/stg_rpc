@@ -13,7 +13,6 @@ service stg_rpct
         wait = no
         user = irisowner
         env = TZ=/etc/localtime
-        #server = /usr/bin/irissession
         server = /home/irisowner/bin/irissession
         server_args = iris -ci -U VISTA CACHEVMS^XWBTCPM
         instances = UNLIMITED
