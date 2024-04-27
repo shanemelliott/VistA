@@ -66,8 +66,7 @@
 			"extensions": [
 				"intersystems-community.vscode-objectscript",
 				"intersystems.language-server",
-				"intersystems-community.servermanager",
-				"ms-vscode.docker"
+				"intersystems-community.servermanager"
 			]
 		}
 	}
