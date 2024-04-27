@@ -16,10 +16,12 @@ COPY stg_vlk /etc/xinetd.d/stg_vlk
 COPY smeint.xml /tmp/smeint.xml
 COPY xusrb1.xml /tmp/xusrb1.xml
 COPY xinetd.sh /xinetd.sh
+COPY merge.cpf /home/irisowner/merge.cpf
 COPY xusrb1fix.script /tmp/xusrb1fix.script
 COPY xusrb1fix.sh /tmp/xusrb1fix.sh
 COPY CreateUser.script /tmp/CreateUser.script
 COPY CreateUser.sh /tmp/CreateUser.sh
 RUN chmod +x /tmp/xusrb1fix.sh
 USER ${ISC_PACKAGE_MGRUSER}
+#RUN --mount=type=bind,src=.,dst=. iris start IRIS && iris session IRIS < iris.script
 

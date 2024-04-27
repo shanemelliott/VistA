@@ -12,6 +12,9 @@ services:
       - 1972:1972
       - 9093:19301
       - 9096:18301
+     environment:
+      - ISC_CPF_MERGE_FILE=/home/irisowner/merge.cpf
+      - ISC_DATA_DIRECTORY=/home/irisowner/iris_conf.d
     volumes:
       - ../:/home/irisowner/dev
     #environment:
