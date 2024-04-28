@@ -3,13 +3,11 @@ ARG IMAGE=intersystemsdc/iris-community
 FROM $IMAGE
 
 USER root
-
-# RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
 RUN apt-get update \
-     && apt-get -y install xinetd vim unzip
+     && apt-get -y install xinetd vim unzip sudo
      
-#RUN /bin/echo -e ${ISC_PACKAGE_MGRUSER}\\tALL=\(ALL\)\\tNOPASSWD: ALL >> /etc/sudoers && \
-#	sudo -u ${ISC_PACKAGE_MGRUSER} sudo echo enabled passwordless sudo-ing for ${ISC_PACKAGE_MGRUSER}
+RUN /bin/echo -e ${ISC_PACKAGE_MGRUSER}\\tALL=\(ALL\)\\tNOPASSWD: ALL >> /etc/sudoers && \
+	sudo -u ${ISC_PACKAGE_MGRUSER} sudo echo enabled passwordless sudo-ing for ${ISC_PACKAGE_MGRUSER}
 
 COPY stg_rpc /etc/xinetd.d/stg_rpc
 COPY stg_vlk /etc/xinetd.d/stg_vlk
@@ -28,5 +26,5 @@ RUN wget -q https://foia-vista.worldvista.org/DBA_VistA_FOIA_System_Files/DBA_VI
 RUN mv DBA_VISTA_FOIA_20240401.zip /home/irisowner/dat/vista/
 #RUN unzip /home/irisowner/dat/vista/DBA_VISTA_FOIA_20240401.zip -d /home/irisowner/dat/vista
 #RUN rm /home/irisowner/dat/vista/DBA_VISTA_FOIA_20240401.zip
-#RUN --mount=type=bind,src=.,dst=. iris start IRIS && iris session IRIS < expuser.script && iris stop IRIS quietly
+RUN --mount=type=bind,src=.,dst=. iris start IRIS && iris session IRIS < expuser.script && iris stop IRIS quietly
 
