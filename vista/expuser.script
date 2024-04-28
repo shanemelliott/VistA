@@ -1,3 +1,7 @@
  ; fix expired users
  zn "%SYS"
  Do ##class(Security.Users).UnExpireUserPasswords("*")
+ zn %SYS
+ zpm "install -v webterminal"
+ zn "USER"
+ halt
