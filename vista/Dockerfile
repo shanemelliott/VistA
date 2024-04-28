@@ -22,10 +22,11 @@ COPY xusrb1fix.sh /tmp/xusrb1fix.sh
 COPY CreateUser.script /tmp/CreateUser.script
 COPY CreateUser.sh /tmp/CreateUser.sh
 RUN chmod +x /tmp/xusrb1fix.sh
-RUN mkdir /home/irisowner/dat/vista
+USER ${ISC_PACKAGE_MGRUSER}
+RUN mkdir -p /home/irisowner/dat/vista
 RUN wget https://foia-vista.worldvista.org/DBA_VistA_FOIA_System_Files/DBA_VISTA_FOIA_2024/DBA_VISTA_FOIA_20240401.zip
 RUN mv DBA_VISTA_FOIA_20240401.zip /home/irisowner/dat/vista/
 RUN unzip /home/irisowner/dat/vista/DBA_VISTA_FOIA_20240401.zip
-USER ${ISC_PACKAGE_MGRUSER}
+
 #RUN --mount=type=bind,src=.,dst=. iris start IRIS && iris session IRIS < expuser.script && iris stop IRIS quietly
 
