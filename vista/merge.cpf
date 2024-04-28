@@ -1,5 +1,5 @@
 [Databases]
-VISTA=/dur/dat/vista/
+VISTA=/home/irisowner/dat/vista
 
 [Namespaces]
 VISTA=VISTA
