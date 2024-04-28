@@ -24,7 +24,7 @@ COPY CreateUser.sh /tmp/CreateUser.sh
 RUN chmod +x /tmp/xusrb1fix.sh
 USER ${ISC_PACKAGE_MGRUSER}
 RUN mkdir -p /home/irisowner/dat/vista
-RUN wget https://foia-vista.worldvista.org/DBA_VistA_FOIA_System_Files/DBA_VISTA_FOIA_2024/DBA_VISTA_FOIA_20240401.zip
+RUN wget -q https://foia-vista.worldvista.org/DBA_VistA_FOIA_System_Files/DBA_VISTA_FOIA_2024/DBA_VISTA_FOIA_20240401.zip
 RUN mv DBA_VISTA_FOIA_20240401.zip /home/irisowner/dat/vista/
 #RUN unzip /home/irisowner/dat/vista/DBA_VISTA_FOIA_20240401.zip
 
